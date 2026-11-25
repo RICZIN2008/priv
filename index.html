@@ -1,0 +1,86 @@
+
+
+<aside id="side">
+  <header>
+    <div class="brand"><span class="dot"></span> vazados</div>
+    <div class="sub">pCloud · publink pública</div>
+  </header>
+  <div id="tree"></div>
+  <div class="sidefoot">
+    <button class="btn wide" id="reload">↻ Recarregar índice</button>
+    <button class="btn wide pri" id="openUp">⇪ Enviar arquivos</button>
+    <button class="btn wide" id="openHelp">? Ajuda / atalhos</button>
+  </div>
+</aside>
+
+<div id="main">
+  <div id="top">
+    <button class="btn" id="barMobile" aria-label="Pastas">☰</button>
+    <div id="crumb"></div>
+    <span class="grow"></span>
+    <label class="field">🔎 <input id="q" placeholder="buscar em tudo…" autocomplete="off"></label>
+    <select id="kind" aria-label="Filtro de tipo">
+      <option value="all">Tudo</option>
+      <option value="image">Só fotos</option>
+      <option value="video">Só vídeos</option>
+    </select>
+    <select id="sort" aria-label="Ordenação">
+      <option value="name">Nome A→Z</option>
+      <option value="name-d">Nome Z→A</option>
+      <option value="size-d">Maior primeiro</option>
+      <option value="size">Menor primeiro</option>
+      <option value="date-d">Mais recentes</option>
+      <option value="date">Mais antigos</option>
+    </select>
+    <button class="btn" id="preload" title="Carregar miniaturas da tela">⚡ Miniaturas</button>
+  </div>
+  <div id="stats"></div>
+  <div><div id="grid"></div><div id="sentinel" style="height:40px"></div></div>
+</div>
+
+<div id="lb" role="dialog" aria-modal="true">
+  <div id="lbTop">
+    <span id="lbTitle"></span>
+    <span class="grow"></span>
+    <button class="btn" id="lbDl">⬇ Baixar</button>
+    <button class="btn" id="lbOpen">↗ pCloud</button>
+    <button class="btn" id="lbClose">✕</button>
+  </div>
+  <div id="lbBody">
+    <button class="nav" id="prev" aria-label="Anterior">‹</button>
+    <button class="nav" id="next" aria-label="Próximo">›</button>
+  </div>
+  <div id="lbBottom"></div>
+</div>
+
+<aside id="up">
+  <div class="hd"><b>Enviar arquivos</b><span class="grow"></span><button class="btn" id="closeUp">✕</button></div>
+  <div class="dest">Destino: <b id="destName">—</b></div>
+  <div id="drop">Arraste fotos/vídeos aqui<br><small>ou clique para escolher</small></div>
+  <div id="queue"></div>
+</aside>
+<input type="file" id="filePick" multiple="" accept="image/*,video/*" hidden="">
+
+<div id="toast"></div>
+
+<div id="help">
+  <div class="box">
+    <h2>Como usar</h2>
+    <ul>
+      <li>Nada é baixado em massa: as miniaturas são geradas pelo pCloud e só carregam quando entram na tela.</li>
+      <li>Vídeos abrem em <b>streaming</b>. Use os botões de resolução para economizar dados (480p/720p) ou ver no original.</li>
+      <li>Atalhos: <kbd>←</kbd> <kbd>→</kbd> navegam, <kbd>F</kbd> tela cheia, <kbd>D</kbd> baixar, <kbd>Esc</kbd> fecha.</li>
+      <li>Uploads vão para a pasta aberta, com barra de progresso.</li>
+    </ul>
+    <h2 style="margin-top:16px">Se a lista não carregar</h2>
+    <p style="color:#c3cfdb; font-size:13px">
+      O navegador precisa permitir chamadas para <code>api.pcloud.com</code>.
+      No GitHub Pages isso funciona. Se testar local por <code>file://</code> e falhar, rode um servidor local
+      (<code>python -m http.server</code>) ou use o link publicado.
+    </p>
+    <div style="text-align:right; margin-top:14px"><button class="btn pri" id="closeHelp">Entendi</button></div>
+  </div>
+</div>
+
+
+
